@@ -1,0 +1,130 @@
+@import url(http://fonts.googleapis.com/css2?family=Raleway);
+@import '~bootstrap/scss/_functions.scss';
+@import '~bootstrap/scss/_variables.scss';
+
+$font: 'Raleway', sans-serif;
+
+$display-font-weight: 400;
+
+$custom-colors: (
+    'lshade': #ECF0E8,
+    'laccent': #72ABA0,
+    'brand': #275424,
+    'daccent': #21392f,
+    'dshade': #1c3731
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+html, body {
+    font-family: $font;
+    font-smooth: auto;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+
+p {
+    font-size: large;
+}
+
+.color-inherit {
+    color: inherit;
+}
+
+.color-inherit:hover {
+    color: inherit;
+}
+
+.hbutton:hover {
+    color: map-get($theme-colors, 'lshade');
+}
+
+.hlink {
+    text-decoration: none;
+    padding: 0rem;
+}
+
+.hlink::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0.2rem;
+    background: map-get($theme-colors, 'brand');
+    transition: width .3s;
+}
+
+.hlink:hover::after {
+    width: 100%;
+    transition: width .3s;
+}
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.link:hover {
+    color: map-get($theme-colors, 'laccent')
+}
+
+.navIcon {
+    width: 100%;
+    height: 100%;
+}
+
+#banner {
+    height: 30vh;
+}
+
+#body {
+    min-height: 50vh;
+}
+
+#company {
+    color: map-get($theme-colors, 'laccent');
+}
+
+#company:hover {
+    color: #6691b1;
+}
+
+#footer {
+    min-height: 25vh;
+}
+
+#gmap {
+    padding-bottom: 25%;
+    position: relative;
+    height: 0;
+    border: 0.15rem solid map-get($theme-colors, 'daccent');
+}
+
+#header {
+    max-height: 30vh;
+}
+
+#layout-container {
+    height: 100vh;
+}
+
+#layout {
+    background: map-get($theme-colors, 'lshade');
+    color: map-get($theme-colors, 'dshade');
+}
+
+#nav {
+    z-index: 1;
+}
+
+#navButton {
+    width: 3rem;
+    height: 3rem;
+}
+
+#navMenu {
+    width: 10rem;
+    top: -17rem;
+    right: 0;
+}
+
+@import '~bootstrap/scss/bootstrap.scss';
